@@ -1,0 +1,14 @@
+language: python
+sudo: false
+python:
+  - 3.3
+  - 3.4
+
+install:
+  - pip install -e .[testing]
+
+script:
+  - nosetests
+
+notifications:
+  email: false
