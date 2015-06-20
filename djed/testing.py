@@ -45,7 +45,7 @@ class BaseTestCase(TestCase):
         request = testing.DummyRequest(environ=dict(environ), **kwargs)
         request.request_iface = IRequest
         request.registry = registry
-        apply_request_extensions(request, extensions)
+        request._set_extensions(registry.getUtility(IRequestExtensions))
         return request
 
     def make_app(self):
