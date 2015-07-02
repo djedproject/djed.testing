@@ -19,7 +19,7 @@ tests_require = []
 
 setup(
     name='djed.testing',
-    version='0.1',
+    version='0.2.dev0',
     description='Base unit test case for Pyramid',
     long_description='\n\n'.join((read('README.rst'), read('CHANGES.txt'))),
     classifiers=[
