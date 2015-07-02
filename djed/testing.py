@@ -41,7 +41,7 @@ class BaseTestCase(TestCase):
         if registry is None:
             registry = self.registry
         if environ is None:
-            environ=self._environ
+            environ = self._environ
         request = testing.DummyRequest(environ=dict(environ), **kwargs)
         request.request_iface = IRequest
         request.registry = registry
