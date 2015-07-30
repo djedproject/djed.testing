@@ -1,21 +1,12 @@
+import os
+
 from setuptools import setup
-
-from codecs import open
-from os import path
-
-here = path.abspath(path.dirname(__file__))
 
 
 def read(f):
-    return open(path.join(here, f), encoding='utf-8').read().strip()
+    here = os.path.abspath(os.path.dirname(__file__))
+    return open(os.path.join(here, f), encoding='utf-8').read().strip()
 
-requires = [
-    'pyramid',
-    'nose',
-    'webtest',
-]
-
-tests_require = []
 
 setup(
     name='djed.testing',
@@ -38,9 +29,13 @@ setup(
     keywords='web pyramid pylons djed',
     packages=['djed'],
     include_package_data=True,
-    install_requires=requires,
+    install_requires=[
+        'pyramid',
+        'nose',
+        'webtest',
+    ],
     extras_require={
-        'testing': tests_require,
+        'testing': [],
     },
     test_suite='nose.collector',
     entry_points={
